@@ -26,6 +26,41 @@
 
 /* Size of the Data Set */
 #define SIZE (40)
+void print_statistics(unsigned char* array_pointer, unsigned int array_size)
+{
+  /* To do */
+}
+
+void print_array(unsigned char* array_pointer, unsigned int array_size)
+{
+  /* To do */
+}
+
+unsigned char find_median(unsigned char* array_pointer, unsigned int array_size)
+{
+  /* To do */
+}
+
+unsigned char find_mean(unsigned char* array_pointer, unsigned int array_size)
+{
+  /* To do */
+}
+
+unsigned char find_maximum(unsigned char* array_pointer, unsigned int array_size)
+{
+  /* To do */
+}
+
+unsigned char find_minimum(unsigned char* array_pointer, unsigned int array_size)
+{
+  /* To do */
+}
+
+void sort_array(unsigned char* array_pointer, unsigned int array_size)
+{
+  /* To do */
+
+}
 
 void main() {
 

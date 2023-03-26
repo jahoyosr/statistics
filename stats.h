@@ -10,31 +10,113 @@
  *****************************************************************************/
 /**
  * @file stats.h
- * @brief <Add Brief Description Here >
+ * @brief File containing the declaration of the statistics function for an array of unsigned char.
  *
- * <Add Extended Description Here>
+ * The functions declared in this file may include common statistical operations such as calculating 
+ * the maximum, minimum, mean, and median of the array. The declaration of each function specifies its 
+ * name, argument list, and return type.
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author Julian Hoyos
+ * @date 26/03/2023
  *
  */
 #ifndef __STATS_H__
 #define __STATS_H__
 
-/* Add Your Declarations and Function Comments here */ 
 
 /**
- * @brief <Add Brief Description of Function Here>
+ * @brief Function to print the statistics of an array including maximum, minimum, mean and median.
  *
- * <Add Extended Description Here>
+ * This function takes in two input arguments: a pointer to an array of unsigned char values and the 
+ * size of the array. The function then iterates through the array to determine maximum, minimum, media, 
+ * and median values. Once all the statistical properties have been calculated, the function prints them 
+ * to the console. 
  *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
+ * @param array_pointer Pointer to the array of unsigned char values.
+ * @param array_size    Size of the array.
  *
- * @return <Add Return Informaiton here>
+ * @return void.
  */
+void print_statistics(unsigned char* array_pointer, unsigned int array_size);
 
+
+/**
+ * @brief Function to print an array of unsigned char.
+ *
+ * This function takes in two input arguments: a pointer to an array of unsigned char values and the 
+ * size of the array. The function prints the data array to the console. 
+ *
+ * @param array_pointer Pointer to the array of unsigned char values.
+ * @param array_size    Size of the array.
+ *
+ * @return void.
+ */
+void print_array(unsigned char* array_pointer, unsigned int array_size);
+
+/**
+ * @brief Function to calculate the median value of an array of unsigned char values.
+ *
+ * This function takes in two input arguments: a pointer to an array of unsigned char values and the 
+ * size of the array and returns the calculated median value as a single numerical value.
+ *
+ * @param array_pointer Pointer to the array of unsigned char values.
+ * @param array_size    Size of the array.
+ *
+ * @return Median value of the input array.
+ */
+unsigned char find_median(unsigned char* array_pointer, unsigned int array_size);
+
+/**
+ * @brief Function to calculate the mean value of an array of unsigned char values.
+ *
+ * This function takes in two input arguments: a pointer to an array of unsigned char values and the 
+ * size of the array and returns the calculated mean value as a single numerical value.
+ *
+ * @param array_pointer Pointer to the array of unsigned char values.
+ * @param array_size    Size of the array.
+ *
+ * @return Mean value of the input array.
+ */
+unsigned char find_mean(unsigned char* array_pointer, unsigned int array_size);
+
+/**
+ * @brief Function to find the maximum value of an array of unsigned char values.
+ *
+ * This function takes in two input arguments: a pointer to an array of unsigned char values and the 
+ * size of the array and returns the maximum value as a single numerical value.
+ *
+ * @param array_pointer Pointer to the array of unsigned char values.
+ * @param array_size    Size of the array.
+ *
+ * @return Maximum value of the input array.
+ */
+unsigned char find_maximum(unsigned char* array_pointer, unsigned int array_size);
+
+/**
+ * @brief Function to find the minimum value of an array of unsigned char values.
+ *
+ * This function takes in two input arguments: a pointer to an array of unsigned char values and the 
+ * size of the array and returns the minimum value as a single numerical value.
+ *
+ * @param array_pointer Pointer to the array of unsigned char values.
+ * @param array_size    Size of the array.
+ *
+ * @return Minimum value of the input array.
+ */
+unsigned char find_minimum(unsigned char* array_pointer, unsigned int array_size);
+
+/**
+ * @brief Function to sort an array from the largest to the smallest value.
+ *
+ * This function takes in two input arguments: a pointer to an array of unsigned char values and the 
+ * size of the array. The function then iterates through the array to sort the elements in descending
+ * order.
+ *
+ * @param array_pointer Pointer to the array of unsigned char values.
+ * @param array_size    Size of the array.
+ *
+ * @return void.
+ */
+void sort_array(unsigned char* array_pointer, unsigned int array_size);
 
 #endif /* __STATS_H__ */
