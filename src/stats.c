@@ -63,6 +63,7 @@ unsigned char find_median(unsigned char* array_pointer, unsigned int array_size)
 
   /* Copy array */
   memcpy(sorted_array_pointer, array_pointer, array_size * sizeof(unsigned char));
+  sort_array(sorted_array_pointer, array_size);
   mid_element = array_size/2;
  
   if(0 != array_size % 2 )
