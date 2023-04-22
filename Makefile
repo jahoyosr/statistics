@@ -33,10 +33,9 @@
 #------------------------------------------------------------------------------
 include sources.mk
 
-BASENAME = c1m2
+BASENAME = c1final
 TARGET = $(BASENAME).out
 GEN_FLAGS = -Wall -Werror -g -O0 -std=c99 
-
 ifeq ($(PLATFORM),MSP432)
 # Platform Specific Flags
 LINKER_FILE = $(CURDIR)/../msp432p401r.lds
@@ -49,20 +48,29 @@ ARMFLAGS = -mcpu=$(CPU) -m$(ARCH) --specs=$(SPECS) -march=armv7e-m -mfloat-abi=h
 CC = arm-none-eabi-gcc
 LD = arm-none-eabi-ld
 SIZE_EXC = arm-none-eabi-size
-CFLAGS = $(GEN_FLAGS) $(ARMFLAGS) -D$(PLATFORM)
+CFLAGS = $(GEN_FLAGS) $(ARMFLAGS) -D$(PLATFORM) -D$(OPTION) -D$(COURSE)
 LDFLAGS = -Wl,-Map=$(BASENAME).map -T $(LINKER_FILE)
 OBJDUMP = arm-none-eabi-objdump	
 else
 ifneq ($(PLATFORM),HOST)
 $(warning Platform $(PLATFORM) not recognized. Using HOST platform.)
+PLATFORM = HOST
 endif
 # Compile Defines
 CC = gcc
 LD = ld
 SIZE_EXC = size
-CFLAGS = -Wall -Werror -g -O0 -std=c99 -D$(PLATFORM)
+CFLAGS = -Wall -g -O0 -std=c99 -D$(PLATFORM)
 LDFLAGS = -Wl,-Map=$(BASENAME).map
 OBJDUMP = objdump
+endif
+
+#Compile time switch options
+ifdef OPTION
+CFLAGS += -D$(OPTION)
+endif
+ifdef COURSE
+CFLAGS +=-D$(COURSE)
 endif
 
 DEPS = $(SOURCES:.c=.dep)
